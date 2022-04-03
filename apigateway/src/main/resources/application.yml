@@ -1,0 +1,47 @@
+spring:
+  application:
+    name: API-GATEWAY
+  cloud:
+    gateway:
+      routes:
+        - id: catalogue-service
+          uri: lb://CATALOGUE-SERVICE
+          predicates:
+            - Path=/catalogue/**
+          #filters:
+          #- name: CircuitBreaker
+          #  args:
+          #    name: catalogue-service
+          #    fallbackuri: forward:/catalogueFallback
+        - id: inventory-service
+          uri: lb://INVENTORY-SERVICE
+          predicates:
+            - Path=/inventory/**
+          #filters:
+          #- name: CircuitBreaker
+          #  args:
+          #    name: inventory-service
+          #    fallbackuri: forward:/inventoryFallBack
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:9001/eureka/
+  instance:
+    hostname: localhost  
+    
+server:
+  port: 9002
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream
+hystrix:
+  command:
+    fallbackcmd:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 5000

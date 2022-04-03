@@ -1,0 +1,18 @@
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:9001/eureka/
+  instance:
+    hostname: localhost    
+      
+server:
+  port: 9003
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant-path-matcher
+  application:
+    name: CATALOGUE-SERVICE
+

@@ -1,0 +1,30 @@
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:9001/eureka/
+  instance:
+    hostname: localhost 
+
+
+server:
+  port: 9004
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant-path-matcher
+  application:
+    name: INVENTORY-SERVICE
+  datasource:
+    driverClassName: org.h2.Driver
+    password: sa
+    url: jdbc:h2:mem:testdb
+    username: sa
+  h2:
+    console:
+      enabled: true
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    defer-datasource-initialization: false
+  
