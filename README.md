@@ -9,13 +9,13 @@ catalogue service @ locahost:9003  Inventory @locahost:9004
 
 Swagger-ui @ locahost:9003/swagger-ui.html
 
-3.Finally run the API service locate in apigate
+3.Finally run the API service locate in apigate folder
 
-post run it can be accessible @ locahost:9002
+post run both the microservices can be accessible from @ locahost:9002
 
-catalogue service and inventory services can be accessible through API gateway @
+catalogue service and inventory services can be accessible through API gateway
 
-locahost:9002/catalogue , locahost:9002/inventory
+@locahost:9002/catalogue , locahost:9002/inventory
 
 DB console can be accessible at locahost:9004/h2-console
 
