@@ -1,6 +1,6 @@
 Project Setup
 
-1.First run the Eureka Service Descovery project located in serviceregistry folder
+1.First run the Eureka Service Discovery project located in serviceregistry folder
 Access the URL @ localhost:9001
 
 2.Run the microservices Inventory service and Catalogues services located in the project inventory, catalogueservices
@@ -9,7 +9,7 @@ catalogue service @ locahost:9003  Inventory @locahost:9004
 
 Swagger-ui @ locahost:9003/swagger-ui.html
 
-3. finally run the API service locate in apigate
+3.Finally run the API service locate in apigate
 
 post run it can be accessible @ locahost:9002
 
